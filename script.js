@@ -62,6 +62,18 @@ document.getElementById('btn_def').addEventListener('click', function () {
     inputWindow.value = '';
 })
 
+document.getElementById('btn_multi').addEventListener('click', function () {
+    lastOperand = parseInt(inputWindow.value);
+    operation = 'multi';
+    inputWindow.value = '';
+})
+
+document.getElementById('btn_div').addEventListener('click', function () {
+    lastOperand = parseInt(inputWindow.value);
+    operation = 'div';
+    inputWindow.value = '';
+})
+
 document.getElementById('btn_calc').addEventListener('click', function () {
     if (operation === 'sum'){
         const result = lastOperand + parseInt(inputWindow.value);
@@ -71,6 +83,18 @@ document.getElementById('btn_calc').addEventListener('click', function () {
     }
     if (operation === 'def'){
         const result = lastOperand - parseInt(inputWindow.value);
+        operation = null;
+        lastOperand = 0;
+        inputWindow.value = result;
+    }
+    if (operation === 'multi'){
+        const result = lastOperand * parseInt(inputWindow.value);
+        operation = null;
+        lastOperand = 0;
+        inputWindow.value = result;
+    }
+    if (operation === 'div'){
+        const result = lastOperand / parseInt(inputWindow.value);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;
