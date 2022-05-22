@@ -56,9 +56,21 @@ document.getElementById('btn_sum').addEventListener('click', function () {
     inputWindow.value = '';
 })
 
+document.getElementById('btn_def').addEventListener('click', function () {
+    lastOperand = parseInt(inputWindow.value);
+    operation = 'def';
+    inputWindow.value = '';
+})
+
 document.getElementById('btn_calc').addEventListener('click', function () {
     if (operation === 'sum'){
         const result = lastOperand + parseInt(inputWindow.value);
+        operation = null;
+        lastOperand = 0;
+        inputWindow.value = result;
+    }
+    if (operation === 'def'){
+        const result = lastOperand - parseInt(inputWindow.value);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;
