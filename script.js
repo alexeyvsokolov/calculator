@@ -50,55 +50,55 @@ document.getElementById('btn_0').addEventListener('click', function () {
     inputWindow.value += '0';
 })
 
-document.getElementById('btn_dot').addEventListener('click', function () {
+document.getElementById('btn_dot').addEventListener('click', function () { // Кнопка точки
     inputWindow.value += '.';
 })
 
 document.getElementById('btn_sum').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'sum';
     inputWindow.value = '';
 })
 
 document.getElementById('btn_def').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'def';
     inputWindow.value = '';
 })
 
 document.getElementById('btn_multi').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'multi';
     inputWindow.value = '';
 })
 
 document.getElementById('btn_div').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'div';
     inputWindow.value = '';
 })
 
 document.getElementById('btn_calc').addEventListener('click', function () {
     if (operation === 'sum'){
-        const result = lastOperand + parseInt(inputWindow.value);
+        const result = lastOperand + parseFloat(inputWindow.value);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;
     }
     if (operation === 'def'){
-        const result = lastOperand - parseInt(inputWindow.value);
+        const result = lastOperand - parseFloat(inputWindow.value);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;
     }
     if (operation === 'multi'){
-        const result = lastOperand * parseInt(inputWindow.value);
+        const result = lastOperand * parseFloat(inputWindow.value);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;
     }
     if (operation === 'div'){
-        const result = lastOperand / parseInt(inputWindow.value);
+        const result = lastOperand / parseFloat(inputWindow.value);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;
